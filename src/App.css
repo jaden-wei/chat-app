@@ -1,26 +1,69 @@
 * {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .App {
-    height: 100vh;
+  height: 100vh;
 }
 
 .chat-box {
-    width: 100%;
-    height: 90%;
-    background: lightgrey;
+  width: 100%;
+  height: 90%;
+  padding: 5vh 2vh;
+  box-sizing: border-box;
+  background: lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .text-box {
-    height: 10%;
-    display: block;
+  height: 10%;
 }
 
 .message {
-    color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.your-message {
-    color: blue;
+.message p {
+  color: black;
+}
+
+.client-message {
+  align-items: flex-end;
+}
+
+.client-message p {
+  color: blue;
+}
+
+.msg-box {
+  background: white;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 0 10px;
+  margin-bottom: 2vh;
+}
+
+.msg-input-box {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  width: 90%;
+  height: 10vh;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
+.send-msg-btn {
+  padding: 0 5px;
+  margin: 0;
+  border: 0;
+  background: lightblue;
+  height: 10vh;
+  width: 6%;
 }
