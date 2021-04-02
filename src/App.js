@@ -19,7 +19,8 @@ function App() {
 
     if (!n) {
       reqName();
-    } else setName(n);
+    } else 
+    setName(n);
   };
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
 
   useEffect(() => {
     socket.on("chat message", ({ id, name, msg }) => {
-      setChat([...chat, { id, name, msg }]);
+      setChat([{ id, name, msg }, ...chat]);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chat]);
@@ -49,7 +50,7 @@ function App() {
       >
         <div className="msg-box">
           <p>
-            {name}: {msg}
+            {id === clientId ? msg: `${name}: ${msg}`}
           </p>
         </div>
       </div>
@@ -63,16 +64,15 @@ function App() {
       <div className="text-box">
         <form onSubmit={onMessageSubmit}>
           <input
-            className="msg-input-box"
             name="msg"
             onChange={(e) => {
               setMsg(e.target.value);
             }}
             value={msg}
-            placeholder="Your message"
+            placeholder="message"
           />
           <button className="send-msg-btn">
-            <IoMdSend size="40" />
+            <IoMdSend size="30" color="rgb(30, 82, 250)"/>
           </button>
         </form>
       </div>
